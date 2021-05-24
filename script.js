@@ -66,3 +66,20 @@ console.log('last item:', last); //Expected [50]
 
 const secondLast = numbers.slice(-2);
 console.log('Second Last: ', secondLast); //Expected [40, 50]
+
+/* ***************************************************** */
+
+// Three ways to check If the provided array is actually an array
+
+const arr = [1, 2, 3, 4];
+
+console.log(
+  'Is given object an array? ',
+  arr.constructor.toString().indexOf('Array') > -1
+);
+
+console.log('Is given object an instance of array? ', arr instanceof Array);
+
+console.log('Is given object actually an array? ', Array.isArray(arr));
+
+/* ***************************************************** */
