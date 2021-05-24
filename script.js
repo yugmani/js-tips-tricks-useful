@@ -9,3 +9,7 @@ const maskedNumber = lastFourDigits.padStart(creditCard.length, '*');
 
 console.log(lastFourDigits); //Expected 4321
 console.log(maskedNumber); // Expected ************4321
+
+/* ***************************************************** */
+
+// Execute an Event handler only once
