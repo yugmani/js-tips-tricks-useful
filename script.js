@@ -19,7 +19,27 @@ const maskedNumber = lastFourDigits.padStart(creditCard.length, '*');
 document.getElementById('btn').addEventListener(
   'click',
   function() {
+    alert('Button Clicked!');
     console.log('Button clicked!');
   },
   { once: true } // to execute only once.
 );
+
+/* ***************************************************** */
+
+// Update properties of an object using spread operator
+
+const user = {
+  name: 'David',
+  age: 30,
+  city: 'NY'
+};
+
+const newAge = 100;
+const updatedUser = {
+  ...user,
+  age: newAge
+};
+
+console.log(user); // Expected { name: 'David', age: 30, city: 'NY'}
+console.log(updatedUser); // Expected { name: 'David', age: 40, city: 'NY'}
