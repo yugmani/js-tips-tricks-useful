@@ -43,3 +43,15 @@ const updatedUser = {
 
 console.log(user); // Expected { name: 'David', age: 30, city: 'NY'}
 console.log(updatedUser); // Expected { name: 'David', age: 40, city: 'NY'}
+
+/* ***************************************************** */
+
+// Find the number of properties in an object
+
+const client = {
+  name: 'David',
+  age: 30,
+  city: 'NY'
+};
+
+console.log(Object.keys(client).length); // Expected 3
