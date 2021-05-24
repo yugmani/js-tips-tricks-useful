@@ -7,8 +7,8 @@ const lastFourDigits = creditCard.slice(-4); //get last 4 digits;
 
 const maskedNumber = lastFourDigits.padStart(creditCard.length, '*');
 
-// console.log(lastFourDigits); //Expected 4321
-// console.log(maskedNumber); // Expected ************4321
+console.log(lastFourDigits); //Expected 4321
+console.log(maskedNumber); // Expected ************4321
 
 /* ***************************************************** */
 
@@ -55,3 +55,14 @@ const client = {
 };
 
 console.log(Object.keys(client).length); // Expected 3
+
+/* ***************************************************** */
+
+// Get the last elements from the array
+const numbers = [10, 20, 30, 40, 50];
+const last = numbers.slice(-1);
+
+console.log('last item:', last); //Expected [50]
+
+const secondLast = numbers.slice(-2);
+console.log('Second Last: ', secondLast); //Expected [40, 50]
