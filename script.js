@@ -1,18 +1,26 @@
-//Quick way to mask numbers using slce and ES8 padStart Method
+// ***Quick way to mask numbers using slce and ES8 padStart Method***
+function maskNumbers(creditCard) {
+  const lastFourDigits = creditCard.slice(-4); //get last 4 digits;
 
-const creditCard = '4111111111114321'; //16 digit credit card numbers
-const lastFourDigits = creditCard.slice(-4); //get last 4 digits;
+  //prepend * to lastFourDigits to make length equal to creditCard number length
+  const maskedNumber = lastFourDigits.padStart(creditCard.length, '*');
 
-//prepend * to lastFourDigits to make length equal to creditCard number length
+  return [lastFourDigits, maskedNumber];
+}
 
-const maskedNumber = lastFourDigits.padStart(creditCard.length, '*');
+const cardNumber = '4111111111114321'; //16 digit credit card numbers
+console.log(maskNumbers(cardNumber));
+// OR
+const [lastFourDigits, maskedNumber] = maskNumbers(cardNumber);
+console.log('Last 4 digits of card: ', lastFourDigits);
+console.log('Masked Number: ', maskedNumber);
 
-console.log(lastFourDigits); //Expected 4321
-console.log(maskedNumber); // Expected ************4321
+//Expected lastFourDigits: 4321
+// Expected maskedNumber: ************4321
 
 /* ***************************************************** */
 
-// Execute an Event handler only once
+// ***Execute an Event handler only once***
 
 // By passing { once: true } as the third argument to the addEventListener method, the event handler function will be executed only once.
 
@@ -73,13 +81,18 @@ console.log('Second Last: ', secondLast); //Expected [40, 50]
 
 const arr = [1, 2, 3, 4];
 
+//1st Method
 console.log(
   'Is given object an array? ',
   arr.constructor.toString().indexOf('Array') > -1
 );
 
+//2nd Method
 console.log('Is given object an instance of array? ', arr instanceof Array);
 
+//3rd Method
 console.log('Is given object actually an array? ', Array.isArray(arr));
 
 /* ***************************************************** */
+
+
