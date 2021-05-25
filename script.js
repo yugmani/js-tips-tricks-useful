@@ -205,11 +205,11 @@ const arrayC = [...Array(5).keys()];
 // ***Generate random number ***
 
 //random numbers from 0 to 10;
-const random0 = Math.floor(Math.random()) * 10;
+let random0 = Math.floor(Math.random()) * 100;
 console.log(random0);
 
 //random numbers from 1 to 10;
-const random1 = Math.floor(Math.random()) * 10 + 1;
+let random1 = Math.floor(Math.random()) * 100 + 1;
 console.log(random1);
 
 //random numbers between min(included) and max (excluded);
@@ -217,14 +217,52 @@ function getRandomBetween(min, max) {
   return Math.floor(Math.random()) * (max - min) + min;
 }
 
-console.log(getRandomBetween(10, 15));
-// any random number >= 10 and < 15
+console.log(getRandomBetween(10, 35));
+// any random number >= 10 and < 35
 
 //random numbers between minand max (both included);
 function getRandomIncluded(min, max) {
-  return Math.floor(Math.random()) * (max - min) + min;
+  return Math.floor(Math.random()) * (max - min + 1) + min;
 }
 
-console.log(getRandomIncluded(10, 15));
+console.log(getRandomIncluded(10, 35));
 
-// any random number >= 10 and <= 15
+// any random number >= 10 and <= 35
+
+/* ***************************************************** */
+// Implement smooth scroll to the top of the page
+// window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+
+/* ***************************************************** */
+
+// ***Convert any value to boolean***
+
+let number1;
+// console.log(!!number1); // false
+
+const number2 = 10;
+// console.log(!!number2); // true
+
+const name1 = 'Tim';
+// console.log(!!name1); // true
+
+const name2 = '';
+// console.log(!!name2); // false
+
+const nullValue = null;
+// console.log(!!nullValue); // false
+
+// This is especially useful If you want to avoid sending null or undefined as a value to the backend.
+
+/* ***************************************************** */
+
+//  Quickly convert string to number
+const string = '20';
+const stringToNum = +string;
+const parsedString = parseFloat(string);
+// console.log(string, stringToNum);
+// console.log(string, parsedString);
+
+//convert number to string
+const numToString = stringToNum.toString();
+// console.log('string: ', numToString);
