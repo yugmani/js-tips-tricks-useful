@@ -9,11 +9,11 @@ function maskNumbers(creditCard) {
 }
 
 const cardNumber = '4111111111114321'; //16 digit credit card numbers
-console.log(maskNumbers(cardNumber));
+// console.log(maskNumbers(cardNumber));
 // OR
 const [lastFourDigits, maskedNumber] = maskNumbers(cardNumber);
-console.log('Last 4 digits of card: ', lastFourDigits);
-console.log('Masked Number: ', maskedNumber);
+// console.log('Last 4 digits of card: ', lastFourDigits);
+// console.log('Masked Number: ', maskedNumber);
 
 //Expected lastFourDigits: 4321
 // Expected maskedNumber: ************4321
@@ -49,8 +49,8 @@ const updatedUser = {
   age: newAge
 };
 
-console.log(user); // Expected { name: 'David', age: 30, city: 'NY'}
-console.log(updatedUser); // Expected { name: 'David', age: 40, city: 'NY'}
+// console.log(user); // Expected { name: 'David', age: 30, city: 'NY'}
+// console.log(updatedUser); // Expected { name: 'David', age: 40, city: 'NY'}
 
 /* ***************************************************** */
 
@@ -62,7 +62,7 @@ const client = {
   city: 'NY'
 };
 
-console.log(Object.keys(client).length); // Expected 3
+// console.log(Object.keys(client).length); // Expected 3
 
 /* ***************************************************** */
 
@@ -70,10 +70,10 @@ console.log(Object.keys(client).length); // Expected 3
 const numbers = [10, 20, 30, 40, 50];
 const last = numbers.slice(-1);
 
-console.log('last item:', last); //Expected [50]
+// console.log('last item:', last); //Expected [50]
 
 const secondLast = numbers.slice(-2);
-console.log('Second Last: ', secondLast); //Expected [40, 50]
+// console.log('Second Last: ', secondLast); //Expected [40, 50]
 
 /* ***************************************************** */
 
@@ -82,24 +82,24 @@ console.log('Second Last: ', secondLast); //Expected [40, 50]
 const arr = [1, 2, 3, 4];
 
 //1st Method
-console.log(
-  'Is given object an array? ',
-  arr.constructor.toString().indexOf('Array') > -1
-);
+// console.log(
+//   'Is given object an array? ',
+//   arr.constructor.toString().indexOf('Array') > -1
+// );
 
 //2nd Method
-console.log('Is given object an instance of array? ', arr instanceof Array);
+// console.log('Is given object an instance of array? ', arr instanceof Array);
 
 //3rd Method
-console.log('Is given object actually an array? ', Array.isArray(arr));
+// console.log('Is given object actually an array? ', Array.isArray(arr));
 
 /* ***************************************************** */
 
 // ***Get Current TimeStamp***
 const today = new Date();
-console.log(today.getTime());
+// console.log(today.getTime());
 //OR
-console.log(+today);
+// console.log(+today);
 
 //Expected 1621708197298
 
@@ -120,8 +120,8 @@ function getPairs(key, value) {
   return newObj;
 }
 
-console.log(getPairs('name', 'Mike'));
-console.log(getPairs('age', 40));
+// console.log(getPairs('name', 'Mike'));
+// console.log(getPairs('age', 40));
 
 /* ***************************************************** */
 
@@ -135,7 +135,7 @@ const customer = {
 // destructure user properties and use a `status` property with value `Married` if it does not exist
 
 const { name, age, status = 'Married' } = customer;
-console.log(name, age, status); //
+// console.log(name, age, status); //
 
 const person = {
   year: 30,
@@ -145,4 +145,57 @@ const person = {
 //destructure `person` object and rename `name` to `username` and assign a default value of `Anonymous`, if the property does not exist in the `person` object
 
 const { name: username = 'Anonymous', year } = person;
-console.table(username, year);
+// console.table(username, year);
+
+/* ***************************************************** */
+
+/* ***Array Destructuring*** */
+
+const days = [
+  'sunday',
+  'monday',
+  'tuesday',
+  'wednesday',
+  'thursday',
+  'friday',
+  'saturday'
+];
+[firstDay, secondDay] = days;
+
+// console.log('I went to school on ' + firstDay + ' and ' + secondDay + '.');
+
+[offDay, ...rest] = days;
+// console.log('I got day off only on ' + offDay + '.');
+// console.log('My work days are ' + rest + '.');
+
+/* ***************************************************** */
+
+// ***Spread operator***
+
+//Add additional element in the array
+const kindsOfDays = [...days, 'holiday'];
+// console.log(kindsOfDays);
+
+// Concatenate arrays
+const first = ['two', 'three', 'four'];
+const second = ['six', 'seven', 'eight'];
+
+const merged = [...first, ...second];
+// console.log(merged);
+
+//Concatenae and add more elements to create new array
+const newArray = ['one', ...first, 'five', ...second];
+// console.log(newArray);
+
+/* ***************************************************** */
+
+// ***Fill the array with a specific value***
+
+const arrayA = Array(5); //length of array is 5 but without any elements
+// console.log(arrayA.length, arrayA);
+
+const arrayB = Array(6).fill(false);
+// console.log(arrayB); // [false, false, false, false, false]
+
+const arrayC = [...Array(5).keys()];
+// console.log(arrayC); //[1, 2, 3, 5]
