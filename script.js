@@ -327,3 +327,29 @@ function includeMultipleValues(arr, fruit) {
 const liked = ['apple', 'mango', 'banana'];
 // console.log(includeMultipleValues(liked, 'mango'));
 // console.log(includeMultipleValues(liked, 'cherry'));
+
+/* ***************************************************** */
+
+// ***Using optional chaining operator***
+
+const student = {
+  name: 'David',
+  location: {
+    street: {
+      number: 20,
+      name: '11 wall street'
+    }
+  }
+};
+
+// traditional way
+const streetName =
+  student.location && student.location.street && student.location.street.name;
+// console.log(streetName); // 11 wall street
+// const street_Name =  student.location.city.name;
+// Uncaught TypeError: Cannot read property 'street' of undefined
+
+//Modern way
+const street = student?.location?.street?.name;
+// console.log(street); // 11 wall street
+// console.log(student?.location?.city?.name); //undefined
