@@ -269,7 +269,7 @@ const numToString = stringToNum.toString();
 
 //Format number to Two decimal places
 const number = 100.43252354;
-console.log(number.toFixed(2)); //100.43
+// console.log(number.toFixed(2)); //100.43
 
 /* ***************************************************** */
 
@@ -287,3 +287,43 @@ const letter_array = letters.split(',');
 // console.log(name_array.join(''));
 // console.log(letter_array.join('-'));
 
+/* ***************************************************** */
+
+// Check if the array contains a specific value
+
+const fruits = ['apple', 'mango', 'cherry', 'banana', 'pears', 'peach'];
+function arrayContainsValue(arr, value) {
+  //old method
+  // return arr.indexOf(value) !== -1;
+
+  //OR
+
+  //new method
+  return arr.includes(value);
+}
+
+// console.log(arrayContainsValue(fruits, 'peach')); //true;
+// console.log(arrayContainsValue(fruits, 'berry')); //false;
+
+//comparing multiple values at once
+function compareMultipleValues(fruit) {
+  if (fruit === 'apple' || fruit === 'mango' || fruit === 'banana') {
+    return 'I like ' + fruit + '.';
+  }
+  return "I don't really like " + fruit + '.';
+}
+
+// console.log(compareMultipleValues('apple'));
+// console.log(compareMultipleValues('berry'));
+
+//ALTERNATIVE TO THIS function
+function includeMultipleValues(arr, fruit) {
+  if (arr.includes(fruit)) {
+    return 'I like ' + fruit + '.';
+  }
+  return "I don't really like " + fruit + '.';
+}
+
+const liked = ['apple', 'mango', 'banana'];
+// console.log(includeMultipleValues(liked, 'mango'));
+// console.log(includeMultipleValues(liked, 'cherry'));
