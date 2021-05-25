@@ -35,7 +35,7 @@ document.getElementById('btn').addEventListener(
 
 /* ***************************************************** */
 
-// Update properties of an object using spread operator
+// ***Update properties of an object using spread operator***
 
 const user = {
   name: 'David',
@@ -54,7 +54,7 @@ console.log(updatedUser); // Expected { name: 'David', age: 40, city: 'NY'}
 
 /* ***************************************************** */
 
-// Find the number of properties in an object
+// ***Find the number of properties in an object***
 
 const client = {
   name: 'David',
@@ -66,7 +66,7 @@ console.log(Object.keys(client).length); // Expected 3
 
 /* ***************************************************** */
 
-// Get the last elements from the array
+// ***Get the last elements from the array***
 const numbers = [10, 20, 30, 40, 50];
 const last = numbers.slice(-1);
 
@@ -77,7 +77,7 @@ console.log('Second Last: ', secondLast); //Expected [40, 50]
 
 /* ***************************************************** */
 
-// Three ways to check If the provided array is actually an array
+// ***Three ways to check If the provided array is actually an array***
 
 const arr = [1, 2, 3, 4];
 
@@ -95,4 +95,54 @@ console.log('Is given object actually an array? ', Array.isArray(arr));
 
 /* ***************************************************** */
 
+// ***Get Current TimeStamp***
+const today = new Date();
+console.log(today.getTime());
+//OR
+console.log(+today);
 
+//Expected 1621708197298
+
+/* ***************************************************** */
+
+// *** Provide a dynamic key for an object using ES6 computed object property syntax */
+
+function getPairs(key, value) {
+  //Before ES6
+  // const newObj = {};
+  // newObj[key] = value;
+
+  //New ES6 way
+  const newObj = {
+    [key]: value
+  };
+
+  return newObj;
+}
+
+console.log(getPairs('name', 'Mike'));
+console.log(getPairs('age', 40));
+
+/* ***************************************************** */
+
+/* ***Object Destructuring*** */
+
+const customer = {
+  name: 'David',
+  age: 30
+};
+
+// destructure user properties and use a `status` property with value `Married` if it does not exist
+
+const { name, age, status = 'Married' } = customer;
+console.log(name, age, status); //
+
+const person = {
+  year: 30,
+  name: 'AA'
+};
+
+//destructure `person` object and rename `name` to `username` and assign a default value of `Anonymous`, if the property does not exist in the `person` object
+
+const { name: username = 'Anonymous', year } = person;
+console.table(username, year);
