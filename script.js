@@ -199,3 +199,32 @@ const arrayB = Array(6).fill(false);
 
 const arrayC = [...Array(5).keys()];
 // console.log(arrayC); //[1, 2, 3, 5]
+
+/* ***************************************************** */
+
+// ***Generate random number ***
+
+//random numbers from 0 to 10;
+const random0 = Math.floor(Math.random()) * 10;
+console.log(random0);
+
+//random numbers from 1 to 10;
+const random1 = Math.floor(Math.random()) * 10 + 1;
+console.log(random1);
+
+//random numbers between min(included) and max (excluded);
+function getRandomBetween(min, max) {
+  return Math.floor(Math.random()) * (max - min) + min;
+}
+
+console.log(getRandomBetween(10, 15));
+// any random number >= 10 and < 15
+
+//random numbers between minand max (both included);
+function getRandomIncluded(min, max) {
+  return Math.floor(Math.random()) * (max - min) + min;
+}
+
+console.log(getRandomIncluded(10, 15));
+
+// any random number >= 10 and <= 15
