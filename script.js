@@ -266,3 +266,24 @@ const parsedString = parseFloat(string);
 //convert number to string
 const numToString = stringToNum.toString();
 // console.log('string: ', numToString);
+
+//Format number to Two decimal places
+const number = 100.43252354;
+console.log(number.toFixed(2)); //100.43
+
+/* ***************************************************** */
+
+// ***Convert string to array***
+const full_name = 'Mike Johnson';
+
+const name_array = full_name.split('');
+// console.log(name_array);
+
+const letters = 'a,b,c,d,e,f';
+const letter_array = letters.split(',');
+// console.log(letter_array);
+
+// ***Convert array to string***
+// console.log(name_array.join(''));
+// console.log(letter_array.join('-'));
+
